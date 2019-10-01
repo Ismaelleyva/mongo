@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Community Events Board</title>
+    </head>
+    <body>
+      <h1>Community Events Board</h1>
+      <h2>username:{{username}}</h2>
+      <form method="POST" action="/results">
+      <input type="text" name="name of event:">
+      <input type="date" name="date of event:">
+      <input type="submit" value="Submit">
+      </form>
+      <div class="event-list">
+        <ul>
+          {% for event in events %}
+            <li>{{ event.event }} - {{ event.date }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </body>
+</html>
